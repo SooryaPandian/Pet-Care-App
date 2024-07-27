@@ -47,8 +47,8 @@ Follow these instructions to get a copy of the project up and running on your lo
    - Create a file named `connection.py` with the following content:
 
      ```python
-     password = "zyzd qjlb riuu iodi"
-     mail = "heistchief@gmail.com"
+     password = "your_App_password"
+     mail = "example@gmail.com"
      ```
 
    - Install the required Python packages:
