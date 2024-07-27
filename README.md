@@ -1,7 +1,3 @@
-
-### README.md
-
-```markdown
 # Pet Care App
 
 Welcome to the Pet Care App! This application helps pet owners manage their pet's care routines, track health records, and connect with pet care services.
@@ -39,7 +35,6 @@ Follow these instructions to get a copy of the project up and running on your lo
    ```bash
    git clone https://github.com/SooryaPandian/Pet-Care-App.git
    cd Pet-Care-App
-   ```
 
 2. **Backend Setup:**
 
@@ -49,11 +44,11 @@ Follow these instructions to get a copy of the project up and running on your lo
      cd backend
      ```
 
-   - Create a virtual environment:
+   - Create a file named `connection.py` with the following content:
 
-     ```bash
-     python -m venv venv
-     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+     ```python
+     password = "zyzd qjlb riuu iodi"
+     mail = "heistchief@gmail.com"
      ```
 
    - Install the required Python packages:
@@ -92,6 +87,18 @@ Follow these instructions to get a copy of the project up and running on your lo
 
    - Open your browser and navigate to `http://localhost:3000` to view the app.
 
+### Creating an App Password in Gmail
+
+To use Gmail for sending emails from the app, you need to create an app password:
+
+1. Go to your Google Account.
+2. Select Security.
+3. Under "Signing in to Google," select App Passwords. You might need to sign in.
+4. At the bottom, choose Select app and choose the app you’re using.
+5. Choose Select device and choose the device you’re using.
+6. Follow the instructions to generate the app password.
+7. Copy the app password. This password will be used in the `connection.py` file.
+
 ## Contributing
 
 Contributions are welcome! Please fork this repository and submit a pull request for any changes.
@@ -99,16 +106,4 @@ Contributions are welcome! Please fork this repository and submit a pull request
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-### requirements.txt
-
-```txt
-Flask
-Flask-Cors
-Flask-SQLAlchemy
-Flask-Migrate
-Flask-Login
-Flask-Mail
 ```
