@@ -1,0 +1,96 @@
+/* Register.css */
+
+/* Colors */
+:root {
+    --blue-gradient-start: #4a90e2;
+    --blue-gradient-end: #9013fe;
+    --orange: #ff9800;
+    --dark-orange: #e68900;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+  }
+  
+  .register-body {
+    background: linear-gradient(to right, var(--blue-gradient-start), var(--blue-gradient-end));
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .register-form {
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    max-width: 400px; /* Adjust size here */
+    margin: auto;
+    text-align: center;
+    color: var(--text-dark);
+  }
+  
+  .register {
+    overflow: hidden;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  
+  .register > input {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f9f9f9;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 15px 0;
+  }
+  
+  .register > input:focus {
+    border-color: var(--orange);
+  }
+  
+  .register > button {
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--orange);
+    transition: background-color 300ms;
+  }
+  
+  .register > button:hover {
+    background-color: var(--dark-orange);
+  }
+  
+  .signin-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-dark);
+  }
+  
+  .signin-link a {
+    color: var(--orange);
+    text-decoration: underline;
+    margin-left: 5px;
+  }
+  

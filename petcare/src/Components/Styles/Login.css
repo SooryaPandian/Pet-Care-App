@@ -1,0 +1,88 @@
+/* Login.css */
+
+/* Colors */
+:root {
+  --green-seaweed: rgba(2, 128, 144, 1);
+  --blue-queen: rgba(69, 105, 144, 1);
+  --red-fire: rgba(244, 91, 105, 1);
+  --text-light: rgba(255, 255, 255, 0.8);
+  --text-dark: rgba(0, 0, 0, 0.8);
+}
+
+/* Login Container */
+.login-container {
+  background-color: var(--red-fire); /* Apply the pink shade to the container, not the body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 400px; /* Adjust size here */
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.login {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 10px rgba(var(--green-seaweed), 0.2);
+}
+
+.login > input {
+  font-family: 'Asap', sans-serif;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.login > button {
+  font-family: 'Asap', sans-serif;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--red-fire);
+  transition: background-color 300ms;
+}
+
+.login > button:hover {
+  background-color: darken(var(--red-fire), 5%);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.signup-link a {
+  color: var(--blue-queen);
+  text-decoration: underline;
+  margin-left: 5px;
+}

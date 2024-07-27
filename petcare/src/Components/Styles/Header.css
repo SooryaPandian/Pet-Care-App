@@ -1,0 +1,43 @@
+/* src/Components/Styles/Header.css */
+
+.home-header {
+  background: linear-gradient(135deg, #ff5722, #e64a19); /* Gradient background for header */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  position: fixed; /* Fix the header to the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it sits above other content */
+  padding: 0 20px; /* Horizontal padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.highlighted-title {
+  color: #ffffff; /* White text color */
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around; /* Space out navigation items */
+  align-items: center; /* Center items vertically */
+  flex-grow: 1;
+}
+
+.nav-icon {
+  color: #ffffff; /* White color for icons */
+  font-size: 24px; /* Icon size */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-icon:hover {
+  color: rgba(255, 255, 255, 0.8); /* Light overlay on hover */
+  transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+/* Ensure header content does not overlap with body content */
+body {
+  margin-top: 70px; /* Adjust based on header height */
+}

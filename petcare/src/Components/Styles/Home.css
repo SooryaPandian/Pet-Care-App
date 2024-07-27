@@ -1,0 +1,127 @@
+/* Ensure full viewport width and layout */
+.home {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw; /* Full viewport width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  background-color: #f0f4f8; /* Light background color for the whole page */
+}
+
+/* Adjust content padding to account for fixed header */
+.home-content {
+  padding-top: 70px; /* Adjust based on header height */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px; /* Adjusted padding */
+  background: linear-gradient(to right, #a0c4ff, #c0c6ff); /* Gradient background for hero section */
+  width: 100vw; /* Full width of viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Button styles */
+.hero .MuiButton-root {
+  margin-top: 20px;
+  background-color: #007bff; /* Bright blue button color */
+  color: #ffffff; /* White text color */
+  text-transform: none; /* Preserve original button text case */
+  border-radius: 25px; /* Rounded corners */
+}
+
+.hero .MuiButton-root:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Services Section */
+.services {
+  padding: 40px 20px; /* Reduced padding */
+  background: linear-gradient(to right, #ffe6e6, #ffcccc); /* Gradient background for services section */
+  width: 100vw; /* Full width of viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Service Cards */
+.service-card {
+  text-align: center;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  background-color: #ffffff; /* White background color for service cards */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-image {
+  width: 100%;
+  height: auto; /* Allow images to retain their aspect ratio */
+  max-height: 200px; /* Ensure images don't grow too large */
+  border-radius: 10px;
+  object-fit: cover; /* Ensure images cover the container */
+}
+
+/* Feeding Section */
+.feeding {
+  padding: 20px 10px; /* Reduced padding */
+  background: linear-gradient(to right, #e2f7d9, #d0f0c0); /* Gradient background for feeding section */
+  width: 100vw; /* Full width of viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.feeding .info-image {
+  max-height: 250px; /* Ensure image fits well */
+  width: 100%; /* Full width */
+}
+
+/* Training Section */
+.training {
+  padding: 20px 10px; /* Reduced padding */
+  background: linear-gradient(to right, #fff5e6, #ffebcc); /* Gradient background for training section */
+  width: 100vw; /* Full width of viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.training .info-image {
+  max-height: 250px; /* Ensure image fits well */
+  width: 100%; /* Full width */
+}
+
+/* Container Adjustments */
+.MuiContainer-root {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%; /* Full width */
+}
+
+/* Grid Layout Adjustments */
+.MuiGrid-item {
+  padding: 0; /* Remove padding within grid items */
+}
+
+.MuiGrid-container {
+  width: 100%; /* Full width for the grid container */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 10px; /* Adjust padding for smaller screens */
+  }
+  
+  .services, .feeding, .training {
+    padding: 20px 5px; /* Further reduce padding for smaller screens */
+  }
+
+  .service-card {
+    padding: 10px; /* Adjust card padding for smaller screens */
+  }
+
+  .info-image {
+    max-height: 200px; /* Adjust image height for smaller screens */
+  }
+}
