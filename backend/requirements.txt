@@ -1,3 +1,7 @@
 Flask
+Flask-Cors
 Flask-SQLAlchemy
-Werkzeug
+Flask-Migrate
+Flask-Login
+Flask-Mail
+bcrypt
