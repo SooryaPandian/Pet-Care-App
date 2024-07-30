@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory, redirect
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import bcrypt
 import smtplib
@@ -6,9 +6,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from models import db, User
+from models import db, User, ForumPost, Reply
 import os
-from backend.connection import password,mail
+from connection import password, mail
 
 app = Flask(__name__, static_folder='static')
 CORS(app)  # Enable CORS to allow requests from the frontend
@@ -126,6 +126,60 @@ def send_email(username, email, address, condition, contact, description, severi
     except Exception as e:
         print(f"Failed to send email: {e}")
         return jsonify({'message':'Failed to send email'})
+
+@app.route('/api/posts', methods=['POST'])
+def create_post():
+    data = request.get_json()
+    user = User.query.filter_by(username=data['username']).first()
+    if not user:
+        return jsonify({'message': 'User not found'}), 404
+
+    new_post = ForumPost(
+        title=data['title'],
+        content=data['content'],
+        image=data.get('image', None),
+        user_id=user.id
+    )
+    db.session.add(new_post)
+    db.session.commit()
+    return jsonify({'message': 'Post created successfully'})
+
+@app.route('/api/posts', methods=['GET'])
+def get_posts():
+    posts = ForumPost.query.all()
+    posts_data = [{
+        'id': post.id,
+        'title': post.title,
+        'content': post.content,
+        'image': post.image,
+        'username': post.user.username,
+        'replies': [{
+            'id': reply.id,
+            'content': reply.content,
+            'username': reply.user.username
+        } for reply in post.replies]
+    } for post in posts]
+    return jsonify(posts_data)
+
+@app.route('/api/posts/<int:post_id>/replies', methods=['POST'])
+def create_reply(post_id):
+    data = request.get_json()
+    user = User.query.filter_by(username=data['username']).first()
+    if not user:
+        return jsonify({'message': 'User not found'}), 404
+
+    post = ForumPost.query.get(post_id)
+    if not post:
+        return jsonify({'message': 'Post not found'}), 404
+
+    new_reply = Reply(
+        content=data['content'],
+        post_id=post.id,
+        user_id=user.id
+    )
+    db.session.add(new_reply)
+    db.session.commit()
+    return jsonify({'message': 'Reply created successfully'})
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')

@@ -70,8 +70,8 @@ function Header({ isAuthenticated,onLogin }) {
             <StyledLink to="/contact">
               <NavButton>Contact</NavButton>
             </StyledLink>
-            <StyledLink to="/services">
-              <NavButton>Services</NavButton>
+            <StyledLink to="/forum">
+              <NavButton>Forum</NavButton>
             </StyledLink>
             {isAuthenticated ? (
               <NavButton onClick={handleLogout}>Logout</NavButton>

@@ -150,7 +150,7 @@ const Report = () => {
     formData.append('email', localStorage.getItem('email'));
 
     try {
-      const response = await fetch('/api/report', {
+      const response = await fetch('http://localhost:5000/api/report', {
         method: 'POST',
         body: formData,
       });

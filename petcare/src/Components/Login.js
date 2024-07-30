@@ -11,10 +11,12 @@ function Login({ onLogin }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/login', { username, password });
+      const response = await axios.post('http://localhost:5000/login', { username, password });
       alert(response.data.message);
       if (response.data.message === 'Login successful') {
+        localStorage.setItem('token', response.data.access_token);
         localStorage.setItem('username', username);
+       
         localStorage.setItem('email', response.data.email);  // Store email in local storage
         onLogin(true);
         navigate('/');
