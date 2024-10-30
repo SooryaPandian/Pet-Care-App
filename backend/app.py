@@ -9,7 +9,6 @@ from email import encoders
 from models import db, User, ForumPost, Reply
 import os
 from connection import password, mail
-
 app = Flask(__name__, static_folder='static')
 CORS(app)  # Enable CORS to allow requests from the frontend
 app.config['SECRET_KEY'] = 'your_secret_key'
